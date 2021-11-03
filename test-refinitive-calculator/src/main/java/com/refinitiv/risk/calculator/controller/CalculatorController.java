@@ -9,14 +9,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/calculator")
 @Validated
 public class CalculatorController {
@@ -57,4 +55,12 @@ public class CalculatorController {
         CalServiceResponse response = calculatorService.multiply(request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
+
+//    @PostMapping("/test")
+//    public ResponseEntity<CalServiceResponse> test(@Valid @RequestBody CalRequestDTO request)   {
+//
+//        LOG.info("Operate Multiply");
+//        CalServiceResponse response = calculatorService.multiply(request);
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
 }

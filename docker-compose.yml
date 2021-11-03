@@ -2,13 +2,14 @@ version: "3"
 
 services:
   calculator-01:
-    image: calculator:0.1
+    image: springbootdocker
     build:
       context: ./
       # path dockerfile
-      dockerfile: /SpringDockerfile
+      dockerfile: SpringDockerfile
     volumes:
-      - /test-refinitive-calculator:/data/test-refinitive-calculator
+      - ./test-refinitive-calculator:/home/app/src
+    # - /test-refinitive-calculator:/data/test-refinitive-calculator
     ports:
       # exposed port 8080 on the container to port 8081 on the host machine.
       - "8081:8080"
