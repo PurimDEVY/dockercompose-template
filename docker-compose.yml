@@ -10,5 +10,5 @@ services:
     volumes:
       - /test-refinitive-calculator:/data/test-refinitive-calculator
     ports:
-      # exposed port 8081 on the container to port 8081 on the host machine.
-      - "8081:8081"
+      # exposed port 8080 on the container to port 8081 on the host machine.
+      - "8081:8080"
