@@ -1,5 +1,6 @@
 # base image
-FROM node:12
+# FROM node:12
+FROM node:13.12.0-alpine
 
 # set working directory
 # RUN mkdir /usr/src/app && cd /usr/src/app 
@@ -13,7 +14,7 @@ WORKDIR /usr/src/app
 
 # install and cache app dependencies
 COPY frontend ./
-RUN npm install 
+RUN rm -rf node_modules && npm install 
 EXPOSE 3000
 # start app
 CMD ["npm", "start"]
